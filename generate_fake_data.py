@@ -21,26 +21,26 @@ def rows_data(x):
         else:
             first_name = fake.first_name_female()
 
-        fake_data[i]={}
-        fake_data[i]['customer_id'] = str(uuid.uuid4())
-        fake_data[i]['first_name'] = first_name
-        fake_data[i]['last_name'] = fake.last_name()
-        fake_data[i]['address'] = fake.street_address()
-        fake_data[i]['city'] = fake.city()
-        fake_data[i]['state'] = fake.state_abbr()
-        fake_data[i]['zip'] = fake.zipcode()
-        fake_data[i]['email'] = fake.ascii_free_email()
-        fake_data[i]['gender'] = gender
-        fake_data[i]['pet_type'] = fake.random_element(elements=('Dog', 'Fish', 'Cat', 'Reptile', 'Ferret', 'Hamster'))
-        fake_data[i]['last_visit'] = fake.past_date().strftime("%Y%m%d")
-        fake_data[i]['last_store'] = fake.random_element(elements=('East Fabian', 'Gerholdchester', 'Wintontown', 'New Candishaven', 'Roobfurt', 'Simonemouth'))
-        fake_data[i]['number_items_purchased'] = fake.random_int(min=1, max=30)
-        fake_data[i]['lifetime_purchase_amount'] = random.uniform(1.0, 100.8)
-        fake_data[i]['grooming_services'] = fake.boolean()
-        fake_data[i]['organic_food'] = fake.boolean()
-        fake_data[i]['vet_referral'] = fake.boolean()
+        fake_data={}
+        fake_data['customer_id'] = str(uuid.uuid4())
+        fake_data['first_name'] = first_name
+        fake_data['last_name'] = fake.last_name()
+        fake_data['address'] = fake.street_address()
+        fake_data['city'] = fake.city()
+        fake_data['state'] = fake.state_abbr()
+        fake_data['zip'] = fake.zipcode()
+        fake_data['email'] = fake.ascii_free_email()
+        fake_data['gender'] = gender
+        fake_data['pet_type'] = fake.random_element(elements=('Dog', 'Fish', 'Cat', 'Reptile', 'Ferret', 'Hamster'))
+        fake_data['last_visit'] = fake.past_date().strftime("%Y%m%d")
+        fake_data['last_store'] = fake.random_element(elements=('East Fabian', 'Gerholdchester', 'Wintontown', 'New Candishaven', 'Roobfurt', 'Simonemouth'))
+        fake_data['number_items_purchased'] = fake.random_int(min=1, max=30)
+        fake_data['lifetime_purchase_amount'] = random.uniform(1.0, 100.8)
+        fake_data['grooming_services'] = fake.boolean()
+        fake_data['organic_food'] = fake.boolean()
+        fake_data['vet_referral'] = fake.boolean()
 
-        print('|'.join(map(str,fake_data[i].values())))
+        print('|'.join(map(str,fake_data.values())))
 
 def main():
     # Print error if number of rows not supplied
