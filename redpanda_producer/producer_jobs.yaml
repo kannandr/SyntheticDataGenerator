@@ -1,0 +1,20 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: <producer-name>
+spec:
+  completions: 100
+  parallelism: 100
+  template:
+    spec:
+      containers:
+      - name: <producer-name>
+        image: <producer-repo>/rt-redpandasproducer.gke:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+        env:
+          - name: PORT
+            value: "8080"
+      restartPolicy: Never
+
