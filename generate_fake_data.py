@@ -12,7 +12,7 @@ def rows_data(x):
     print('Customer ID|First Name|Last Name|Address|City|State|Zip|Email|Gender|Pet Type|Last Visit|Last Store|Number Items Purchased|Lifetime Purchase Amount|Grooming Services|Organic Food|Vet Referral')
 
     # Generate fake data
-    fake_data = {}
+    # fake_data = {}
     for i in range(0, x):
         gender = fake.random_element(elements=('M', 'F'))
 
@@ -41,6 +41,7 @@ def rows_data(x):
         fake_data['vet_referral'] = fake.boolean()
 
         print('|'.join(map(str,fake_data.values())))
+
 
 def main():
     # Print error if number of rows not supplied
